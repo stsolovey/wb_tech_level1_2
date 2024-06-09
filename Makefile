@@ -10,6 +10,13 @@ test_strings_join:
 test_strings_buff:
 	go test ./01_strings_concat/buff_wins/... -bench=. -benchmem
 
+obscure:
+	go run ./02_interfaces/01_01_obscure/ main.go
+
+consistency:
+	go run ./02_interfaces/01_02_consistency/ main.go
+
+
 tidy:
 	gofumpt -w .
 	gci write . --skip-generated -s standard -s default
