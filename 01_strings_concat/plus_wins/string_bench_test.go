@@ -29,7 +29,6 @@ func BenchmarkConcatPlus(b *testing.B) {
 
 // Бенчмарк для конкатенации с помощью strings.Join
 func BenchmarkConcatJoin(b *testing.B) {
-
 	parts := []string{"This", "is", "a", "test", "of", "the", "buffer."}
 	for i := 0; i < b.N; i++ {
 		result := strings.Join(parts, " ")
@@ -39,7 +38,6 @@ func BenchmarkConcatJoin(b *testing.B) {
 
 // Бенчмарк для конкатенации с помощью bytes.Buffer
 func BenchmarkConcatBuffer(b *testing.B) {
-
 	parts := []string{"This", "is", "a", "test", "of", "the", "buffer."}
 	for i := 0; i < b.N; i++ {
 		var buffer bytes.Buffer
@@ -54,7 +52,6 @@ func BenchmarkConcatBuffer(b *testing.B) {
 
 // Бенчмарк для конкатенации с помощью strings.Builder
 func BenchmarkConcatBuilder(b *testing.B) {
-
 	parts := []string{"This", "is", "a", "test", "of", "the", "buffer."}
 	for i := 0; i < b.N; i++ {
 		var builder strings.Builder

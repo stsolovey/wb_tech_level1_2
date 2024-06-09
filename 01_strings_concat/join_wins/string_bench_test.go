@@ -17,7 +17,6 @@ func generateLargeSlice(size int, length int) []string {
 
 // Бенчмарк для конкатенации с помощью strings.Join
 func BenchmarkConcatJoin(b *testing.B) {
-
 	largeParts := generateLargeSlice(1000, 100) // 1000 строк по 100 символов
 	b.ResetTimer()                              // Сброс таймера перед началом измерений
 	for i := 0; i < b.N; i++ {
@@ -27,7 +26,6 @@ func BenchmarkConcatJoin(b *testing.B) {
 
 // Бенчмарк для конкатенации с помощью bytes.Buffer
 func BenchmarkConcatBuffer(b *testing.B) {
-
 	largeParts := generateLargeSlice(1000, 100)
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
