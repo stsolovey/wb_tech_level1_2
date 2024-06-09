@@ -1,0 +1,34 @@
+@startuml
+
+package "Payment System" {
+    interface "PaymentProcessor" {
+        +ProcessPayment(amount: float64) : (bool, error)
+        +ProcessTax(amount: float64) : (bool, error)
+    }
+
+    class "CreditCardProcessor" {
+        -logger: Logger
+        -CardNumber: string
+        -CVV: string
+        -ExpiryDate: string
+        +ProcessPayment(amount: float64) : (bool, error)
+        +ProcessTax(amount: float64) : (bool, error)
+    }
+
+    class "PayPalProcessor" {
+        -logger: Logger
+        -Email: string
+        +ProcessPayment(amount: float64) : (bool, error)
+        +ProcessTax(amount: float64) : (bool, error)
+    }
+
+    class "Logger" {
+    }
+
+    PaymentProcessor <|.. CreditCardProcessor
+    PaymentProcessor <|.. PayPalProcessor
+    CreditCardProcessor -down-> Logger : uses
+    PayPalProcessor -down-> Logger : uses
+}
+
+@enduml
