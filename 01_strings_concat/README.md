@@ -6,12 +6,12 @@
 
 Однократная конкатенация небольшого количества коротких строк.
 
-| Бенчмарк              | ns/op  | B/op  | allocs/op |
-|-----------------------|--------|-------|-----------|
-| BenchmarkConcatPlus   | 0.4081 | 0     | 0         |
-| BenchmarkConcatJoin   | 75.49  | 32    | 1         |
-| BenchmarkConcatBuffer | 96.88  | 64    | 1         |
-| BenchmarkConcatBuffer | 90.89  | 56    | 3         |
+| Бенчмарк               | ns/op  | B/op  | allocs/op |
+|------------------------|--------|-------|-----------|
+| BenchmarkConcatPlus    | 0.4081 | 0     | 0         |
+| BenchmarkConcatJoin    | 75.49  | 32    | 1         |
+| BenchmarkConcatBuffer  | 96.88  | 64    | 1         |
+| BenchmarkConcatBuilder | 90.89  | 56    | 3         |
 
 ```go
 for i := 0; i < b.N; i++ {
